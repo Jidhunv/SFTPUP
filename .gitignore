@@ -1,0 +1,6 @@
+password.hash
+uploads/
+.claude/
+__pycache__/
+*.pyc
+.env

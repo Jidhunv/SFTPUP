@@ -1,0 +1,97 @@
+:root {
+  --bg: #f4f5f7;
+  --card: #fff;
+  --text: #222;
+  --muted: #666;
+  --border: #e3e5e8;
+  --primary: #2557d6;
+  --primary-hover: #1b44ad;
+  --error: #b00020;
+  --ok: #137333;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14161a;
+    --card: #1e2127;
+    --text: #e8eaed;
+    --muted: #9aa0a6;
+    --border: #2f343c;
+    --primary: #5b8cff;
+    --primary-hover: #7aa1ff;
+    --error: #ff6b81;
+    --ok: #5fd38d;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+main {
+  max-width: 560px;
+  margin: 8vh auto;
+  padding: 2rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, .08);
+}
+
+@media (max-width: 600px) {
+  main { margin: 0; min-height: 100vh; border: 0; border-radius: 0; box-shadow: none; }
+}
+
+h1 { margin: 0 0 1rem; font-size: 1.4rem; }
+
+input, button {
+  display: block;
+  width: 100%;
+  margin: .4rem 0;
+  padding: .65rem .8rem;
+  font: inherit;
+  border-radius: 6px;
+}
+
+input {
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+}
+input:focus { outline: 2px solid var(--primary); outline-offset: 1px; }
+
+input[type="file"] { padding: .5rem; }
+
+button {
+  color: #fff;
+  background: var(--primary);
+  border: 0;
+  cursor: pointer;
+  transition: background .15s;
+}
+button:hover { background: var(--primary-hover); }
+
+.error, .ok { margin: 0 0 .75rem; padding: .5rem .75rem; border-radius: 6px; font-size: .95rem; }
+.error { color: var(--error); border: 1px solid var(--error); }
+.ok { color: var(--ok); border: 1px solid var(--ok); }
+
+table { width: 100%; margin-top: 1.25rem; border-collapse: collapse; font-size: .9rem; }
+th, td { padding: .4rem .3rem; text-align: left; border-bottom: 1px solid var(--border); }
+th { color: var(--muted); font-weight: 600; }
+td:last-child, th:last-child { text-align: right; white-space: nowrap; }
+
+form.inline { margin-top: 1.25rem; }
+form.inline button {
+  width: auto;
+  margin: 0;
+  padding: 0;
+  color: var(--primary);
+  background: none;
+}
+form.inline button:hover { text-decoration: underline; background: none; }
